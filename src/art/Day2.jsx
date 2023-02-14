@@ -35,6 +35,14 @@ export default (props) => {
 
     for(let i = 0; i < points.length; i++){
 
+        //maps the coordinates of the points to the r,g,b values
+        let r = p5.map(points[i].x, 0, canvasWidth, 50, 255)
+        let g = p5.map(points[i].y, 0, canvasWidth, 50, 255)
+        let b = p5.map(points[i].x, 0, canvasWidth, 255, 50)
+
+        p5.fill(r, g, b);
+
+
         //add a vector to each point based on the angle
         let angle = p5.map(p5.noise(points[i].x * mult, points[i].y * mult), 0, 1, 0, 720);
         points[i].add(p5.createVector(p5.cos(angle), p5.sin(angle)));
