@@ -2,18 +2,13 @@ import React from "react";
 import Sketch from "react-p5";
 import SimplexNoise from 'simplex-noise';
 
-let x = 50;
-let y = 50;
-let dragging = false;
+
 let minFrequency = 0.5;
 let maxFrequency = 2;
 let minAmplitude = 0.05;
 let maxAmplitude = 0.5;
 const canvasWidth = 500;
 const canvasHeight = 500;
-
-let amplitude;
-let frequency;
 
 // Included in index.html
 // This is an alternative to p5.js builtin 'noise' function,
@@ -102,5 +97,5 @@ export default (props) => {
 	  }
 	  
 
-	return <Sketch setup={setup} draw={draw} />;
+	return <Sketch setup={setup} draw={draw} className="flex items-center ..." />;
 };

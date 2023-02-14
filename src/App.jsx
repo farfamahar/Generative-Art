@@ -6,8 +6,8 @@ import Day1 from './art/Day1'
 function App() {
 
   return (
-    <div>
-      <Day1/>
+    <div className="flex h-screen justify-center" >
+      <Day1 className="m-auto"/>
     </div>
   )
 }
