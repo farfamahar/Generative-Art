@@ -32,6 +32,9 @@ export default (props) => {
 
     for(let i = 0; i < points.length; i++){
 
+        //add a vector to each point based on the angle
+        let angle = p5.map(p5.noise(points[i].x, points[i].y), 0,1,0,720);
+        points[i].add(p5.createVector(p5.cos(angle), p5.sin(angle)));
 
         p5.ellipse(points[i].x, points[i].y, 5)
     }
