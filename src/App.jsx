@@ -6,7 +6,7 @@ import Day1 from './art/Day1'
 function App() {
 
   return (
-    <div className="flex h-screen justify-center" >
+    <div className="flex h-screen justify-center items-center" >
       <Day1 className="m-auto"/>
     </div>
   )

@@ -7,6 +7,7 @@ let minFrequency = 0.5;
 let maxFrequency = 2;
 let minAmplitude = 0.05;
 let maxAmplitude = 0.5;
+
 const canvasWidth = 500;
 const canvasHeight = 500;
 
@@ -27,6 +28,8 @@ export default (props) => {
 
 	const draw = (p5) => {
 		p5.background(0);
+		let c = p5.color('#0f5=9');
+
   
 		const frequency = p5.lerp(minFrequency, maxFrequency, p5.mouseX / canvasWidth);
 		const amplitude = p5.lerp(minAmplitude, maxAmplitude, p5.mouseY / canvasHeight);
@@ -37,6 +40,7 @@ export default (props) => {
 		p5.noFill();
 		p5.stroke(255);
 		p5.strokeWeight(dim * 0.0075);
+		p5.fill(c);
 		
 		const time = p5.millis() / 1000;
 		const rows = 10;
@@ -83,6 +87,8 @@ export default (props) => {
 	  
 		  // Interpolate X position
 		  const x = p5.lerp(xStart, xEnd, t);
+		  p5.stroke('#fae');
+
 		  
 		  // Interpolate Y position
 		  let y = p5.lerp(yStart, yEnd, t);
@@ -97,5 +103,5 @@ export default (props) => {
 	  }
 	  
 
-	return <Sketch setup={setup} draw={draw} className="flex items-center ..." />;
+	return <Sketch setup={setup} draw={draw} className="" />;
 };
