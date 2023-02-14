@@ -103,5 +103,7 @@ export default (props) => {
 	  }
 	  
 
-	return <Sketch setup={setup} draw={draw} className="" />;
+	return (
+	<Sketch setup={setup} draw={draw} className="" />
+	);
 };

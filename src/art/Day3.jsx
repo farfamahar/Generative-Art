@@ -28,9 +28,6 @@ export default (props) => {
         let c4 = p5.color('#F5B841');
         let c5 = p5.color('F4FF52');
 
-
-
-    
          for (let i = 0; i < 360; i += 20) {
              p5.rotate(angle);
              p5.rect(125, 0, 10);
@@ -42,6 +39,7 @@ export default (props) => {
              p5.rect(125, 0, 10);
              p5.fill(c4);
              p5.rect(100, 0, 10);
+             p5.fill(c5);
              angle += 0.01;
              if(i>180)
                 angle-=0.0005;
