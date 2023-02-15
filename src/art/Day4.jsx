@@ -11,17 +11,20 @@ export default (props) => {
 		// use parent to render the canvas in this ref
 		// (without that p5 will render the canvas outside of your component)
 		p5.createCanvas(canvasWidth, canvasHeight).parent(canvasParentRef);
+        p5.noStroke()
 
         // create points randomly on canvas
         for(let i = 0; i < 10; i=i+1){
             let x = p5.random(canvasWidth);
             let y = p5.random(canvasHeight);
             let a = p5.random(p5.TWO_PI); //angle
+            let fill  = p5.color(p5.random(255), p5.random(255), p5.random(255), 50);
             points[i] = {
                 x:x,
                 y:y,
                 dx:r*p5.cos(a),
-                dy:r*p5.sin(a) // speed of point using parametric equation
+                dy:r*p5.sin(a), // speed of point using parametric equation
+                fill:fill
             }
 
         }
@@ -40,7 +43,7 @@ export default (props) => {
             if(point.y>canvasHeight || point.y <0){
                 point.dy = point.dxy * -1;
             }
-
+            p5.fill(point.fill);
             p5.circle(point.x,point.y,50);
 
         }
