@@ -13,10 +13,10 @@ export default (props) => {
 		p5.createCanvas(canvasWidth, canvasHeight).parent(canvasParentRef);
 
         // create points randomly on canvas
-        for(let i = 10; i < 10; i=i+1){
-            let x = random(canvasWidth);
-            let y = random(canvasHeight);
-            let a = random(TWO_PI); //angle
+        for(let i = 0; i < 10; i=i+1){
+            let x = p5.random(canvasWidth);
+            let y = p5.random(canvasHeight);
+            let a = p5.random(p5.TWO_PI); //angle
             points[i] = {
                 x:x,
                 y:y,
@@ -28,7 +28,7 @@ export default (props) => {
 
     }
 
-    function draw(){
+    function draw(p5){
         for(let i = 0; i < 10; i+=1){
             let point = points[i];
             point.x = point.x + point.dx
@@ -41,14 +41,10 @@ export default (props) => {
                 point.dy = point.dxy * -1;
             }
 
+            p5.circle(point.x,point.y,50);
+
         }
     }
-
-    function draw(p5) {
-
-
-    }
-
 
     return <Sketch setup={setup} draw={draw} className="" />;
 }
