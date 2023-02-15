@@ -4,6 +4,7 @@ import './App.css'
 import Day1 from './art/Day1'
 import Day2 from './art/Day2'
 import Day3 from './art/Day3'
+import Day4 from './art/Day4'
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
     setIndex(artArray.length - 1);
   }
 
-  const [artArray, setArtArray] = useState([<Day1/>, <Day2/>, <Day3/>])
+  const [artArray, setArtArray] = useState([<Day1/>, <Day2/>, <Day3/>, <Day4/>])
 
   return (
     <div className="flex h-screen justify-center items-center flex-col" >
