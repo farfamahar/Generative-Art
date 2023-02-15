@@ -20,11 +20,28 @@ export default (props) => {
             points[i] = {
                 x:x,
                 y:y,
-                dx: r*p5.cos(a), dy:r*p5.sin(a) // speed of point using parametric equation
+                dx:r*p5.cos(a),
+                dy:r*p5.sin(a) // speed of point using parametric equation
             }
 
         }
 
+    }
+
+    function draw(){
+        for(let i = 0; i < 10; i+=1){
+            let point = points[i];
+            point.x = point.x + point.dx
+            point.y = point.y + point.dy
+            //prevent from going off screen
+            if(point.x>canvasWidth || point.x <0){
+                point.dx = point.dx * -1;
+            }
+            if(point.y>canvasHeight || point.y <0){
+                point.dy = point.dxy * -1;
+            }
+
+        }
     }
 
     function draw(p5) {
