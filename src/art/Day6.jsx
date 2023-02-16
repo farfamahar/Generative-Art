@@ -18,12 +18,17 @@ export default (props) => {
     }
 
     function draw(p5){
-        // p5.background(30);
-
-        p5.background('black'); // set the background color to light gray
+        p5.background('black');
+        p5.noFill(); // set the fill color to transparent
+        p5.stroke(255); // set the stroke color to white
+        p5.strokeWeight(1.5); // set the stroke weight to 4 pixels 
+        // draw a series of concentric circles
+        for (let i = 0; i < canvasWidth*2; i += 20) {
+          p5.ellipse(canvasHeight/2, canvasHeight/2, i+=2);
+        }   
+        // draw a black circle at the center of the canvas
         p5.fill(0); // set the fill color to black
-        p5.stroke(255); // set the stroke (outline) color to white
-        p5.strokeWeight(1); // set the stroke weight to 4 pixels
+        p5.noStroke(); // set the stroke color to transparent
         p5.ellipse(canvasWidth/2, canvasHeight/2, 100); // draw a circle at the center of the canvas with a diameter of 100 pixels
 
 
