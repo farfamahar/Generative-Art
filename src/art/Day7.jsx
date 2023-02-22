@@ -25,10 +25,19 @@ export default (props) => {
     //draw squares with increasing width and height (controlled with i)
     for(let i = 0; i < 200; i++){
         p5.push();
+    
         
         //rotation
         let offset = 10; //experiment with this number
         p5.rotate(p5.sin(p5.frameCount + i * offset) * 100);
+
+        let r = p5.map(p5.sin(p5.frameCount), -1, 1, 50, 255);
+        let g = p5.map(p5.cos(p5.frameCount / 2), -1, 1, 50,255);
+        let b = p5.map(p5.sin(p5.frameCount / 4), -1, 1, 50, 255);
+        p5.stroke(r,g,b);
+
+
+
         p5.rect(0, 0, 600 - i * 3, 600 - i * 3 , 200 - i);
         p5.pop();
 
