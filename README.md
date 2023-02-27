@@ -24,5 +24,3 @@ https://user-images.githubusercontent.com/32600047/218779973-94618dc0-63a4-4fbd-
 ## Todo
 - Responsive layout
 - Load all into grid option
-
-
