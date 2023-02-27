@@ -8,6 +8,8 @@ import Day4 from './art/Day4'
 import Day5 from './art/Day5'
 import Day6 from './art/Day6'
 import Day7 from './art/Day7'
+import Day8 from './art/Day8'
+
 
 
 
@@ -29,7 +31,7 @@ function App() {
     setIndex(artArray.length - 1);
   }
 
-  const [artArray, setArtArray] = useState([<Day1/>, <Day2/>, <Day3/>, <Day4/>, <Day5/>, <Day6/>, <Day7/>])
+  const [artArray, setArtArray] = useState([<Day1/>, <Day2/>, <Day3/>, <Day4/>, <Day5/>, <Day6/>, <Day7/>, <Day8/>])
 
   return (
     <div className="flex h-screen justify-center items-center flex-col" >
@@ -45,7 +47,6 @@ function App() {
         <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
       </svg>
     </button>
-      {/* <Day3 className="m-auto"/> */}
       </div>
 
     </div>
