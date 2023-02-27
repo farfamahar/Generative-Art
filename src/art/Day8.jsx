@@ -3,6 +3,15 @@ import Sketch from "react-p5";
 
 const canvasWidth = 500;
 const canvasHeight = 500;
+let randomSize;
+let randomRotate;
+let randomShape;
+let cosModify;
+let sinModify;
+
+
+
+
 
 export default (props) => {
   const setup = (p5, canvasParentRef) => {
@@ -11,6 +20,13 @@ export default (props) => {
 
     p5.createCanvas(canvasWidth, canvasHeight, p5.WEBGL).parent(canvasParentRef);
     p5.angleMode(p5.DEGREES);
+    randomSize = p5.random(2,4);
+    randomShape = p5.random(20,150);
+    randomRotate = p5.random(20,50);
+    cosModify = p5.random(1,10);
+    sinModify = p5.random(1,10);
+
+
 
   };
 
@@ -21,14 +37,23 @@ export default (props) => {
     p5.noFill();
     p5.stroke(255);
 
-    for(let i = 0; i < 20; i++){
+
+    for(let i = 0; i < 40; i++){
+        // let r = p5.map(p5.sin(p5.frameCount), 1, 1, 0, 255);
+        // let g = p5.map(i, 200, 100, 0, 255);
+        // let b = p5.map(p5.cos(p5.frameCount), -1, 1, 255,0)
+
+        // p5.stroke(r,g,b);
+        p5.rotate(p5.frameCount / randomRotate);
+
+
         p5.beginShape();
 
-        for(let j = 0; j < 360; j+= 10){
-            let rad = i * 8;
-            let x = rad * p5.cos(j);
-            let y = rad * p5.sin(j);
-            let z = p5.sin(p5.frameCount + i * 10) * 50;
+        for(let j = 0; j < 360; j+= randomShape){
+            let rad = i * 4;
+            let x = rad * p5.cos(j * cosModify);
+            let y = rad * p5.sin(j * sinModify);
+            let z = p5.sin(p5.frameCount * 2 + i * 5) * 50;
 
             p5.vertex(x, y, z);
         }
