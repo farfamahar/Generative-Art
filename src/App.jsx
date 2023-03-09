@@ -8,9 +8,7 @@ import Day5 from './art/Day5'
 import Day6 from './art/Day6'
 import Day7 from './art/Day7'
 import Day8 from './art/Day8'
-
-
-
+import Day9 from './art/Day9'
 
 function App() {
 
@@ -30,7 +28,7 @@ function App() {
     setIndex(artArray.length - 1);
   }
 
-  const [artArray, setArtArray] = useState([<Day1/>, <Day2/>, <Day3/>, <Day4/>, <Day5/>, <Day6/>, <Day7/>, <Day8/>])
+  const [artArray, setArtArray] = useState([<Day1/>, <Day2/>, <Day3/>, <Day4/>, <Day5/>, <Day6/>, <Day7/>, <Day8/>, <Day9/>])
 
   return (
     <div className="flex h-screen justify-center items-center flex-col" >
