@@ -1,8 +1,6 @@
 import React from "react";
 import Sketch from "react-p5";
-
-const canvasWidth = 500;
-const canvasHeight = 500;
+import { CANVAS_WIDTH, CANVAS_HEIGHT } from '/src/data/const' 
 
 export default (props) => {
   const setup = (p5, canvasParentRef) => {
@@ -11,7 +9,7 @@ export default (props) => {
 
     p5.angleMode(p5.DEGREES);
     p5.rectMode(p5.CENTER);
-    p5.createCanvas(canvasWidth, canvasHeight).parent(canvasParentRef);
+    p5.createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT).parent(canvasParentRef);
 
   };
 
@@ -20,7 +18,7 @@ export default (props) => {
     p5.noFill();
     p5.stroke(255);
 
-    p5.translate(canvasWidth / 2, canvasHeight / 2);
+    p5.translate(CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2);
 
     //draw squares with increasing width and height (controlled with i)
     for(let i = 0; i < 200; i++){

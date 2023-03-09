@@ -1,14 +1,13 @@
 import React from "react";
 import Sketch from "react-p5";
 import SimplexNoise from "simplex-noise";
+import { CANVAS_WIDTH, CANVAS_HEIGHT } from '/src/data/const' 
 
 let minFrequency = 0.5;
 let maxFrequency = 2;
 let minAmplitude = 0.05;
 let maxAmplitude = 0.5;
 
-const canvasWidth = 500;
-const canvasHeight = 500;
 
 // Included in index.html
 // This is an alternative to p5.js builtin 'noise' function,
@@ -19,10 +18,10 @@ export default (props) => {
   const setup = (p5, canvasParentRef) => {
     // use parent to render the canvas in this ref
     // (without that p5 will render the canvas outside of your component)
-    p5.createCanvas(canvasWidth, canvasHeight).parent(canvasParentRef);
+    p5.createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT).parent(canvasParentRef);
 
-    p5.mouseX = canvasWidth / 2;
-    p5.mouseY = canvasHeight / 2;
+    p5.mouseX = CANVAS_WIDTH / 2;
+    p5.mouseY = CANVAS_HEIGHT / 2;
   };
 
   const draw = (p5) => {
@@ -32,15 +31,15 @@ export default (props) => {
     const frequency = p5.lerp(
       minFrequency,
       maxFrequency,
-      p5.mouseX / canvasWidth
+      p5.mouseX / CANVAS_WIDTH
     );
     const amplitude = p5.lerp(
       minAmplitude,
       maxAmplitude,
-      p5.mouseY / canvasHeight
+      p5.mouseY / CANVAS_HEIGHT
     );
 
-    const dim = Math.min(canvasWidth, canvasHeight);
+    const dim = Math.min(CANVAS_WIDTH, CANVAS_HEIGHT);
 
     // Draw the background
     p5.noFill();
@@ -55,12 +54,12 @@ export default (props) => {
     for (let y = 0; y < rows; y++) {
       // Determine the Y position of the line
       const v = rows <= 1 ? 0.5 : y / (rows - 1);
-      const py = v * canvasHeight;
+      const py = v * CANVAS_HEIGHT;
       drawNoiseLine({
         v,
         start: [0, py],
-        end: [canvasWidth, py],
-        amplitude: amplitude * canvasHeight,
+        end: [CANVAS_WIDTH, py],
+        amplitude: amplitude * CANVAS_HEIGHT,
         frequency,
         time: time * 0.5,
         steps: 150,

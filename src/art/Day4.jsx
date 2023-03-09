@@ -1,8 +1,7 @@
 import React from "react";
 import Sketch from "react-p5";
+import { CANVAS_WIDTH, CANVAS_HEIGHT } from '/src/data/const' 
 
-const canvasWidth = 500;
-const canvasHeight = 500;
 let points = [];
 let r = 5;
 
@@ -10,13 +9,13 @@ export default (props) => {
   const setup = (p5, canvasParentRef) => {
     // use parent to render the canvas in this ref
     // (without that p5 will render the canvas outside of your component)
-    p5.createCanvas(canvasWidth, canvasHeight).parent(canvasParentRef);
+    p5.createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT).parent(canvasParentRef);
     p5.noStroke();
 
     // create points randomly on canvas
     for (let i = 0; i < 100; i = i + 1) {
-      let x = p5.random(canvasWidth);
-      let y = p5.random(canvasHeight);
+      let x = p5.random(CANVAS_WIDTH);
+      let y = p5.random(CANVAS_HEIGHT);
       let a = p5.random(p5.TWO_PI); //angle
       let fill = p5.color(p5.random(255), p5.random(255), p5.random(255));
       points[i] = {
@@ -37,10 +36,10 @@ export default (props) => {
       point.x = point.x + point.dx;
       point.y = point.y + point.dy;
       //prevent from going off screen
-      if (point.x > canvasWidth || point.x < 0) {
+      if (point.x > CANVAS_WIDTH || point.x < 0) {
         point.dx = point.dx * -1;
       }
-      if (point.y > canvasHeight || point.y < 0) {
+      if (point.y > CANVAS_HEIGHT || point.y < 0) {
         point.dy = point.dy * -1;
       }
       p5.fill(point.fill);

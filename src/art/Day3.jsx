@@ -1,15 +1,13 @@
 import React from "react";
 import Sketch from "react-p5";
-
-const canvasWidth = 500;
-const canvasHeight = 500;
+import { CANVAS_WIDTH, CANVAS_HEIGHT } from '/src/data/const' 
 let angle = 0;
 
 export default (props) => {
   const setup = (p5, canvasParentRef) => {
     // use parent to render the canvas in this ref
     // (without that p5 will render the canvas outside of your component)
-    p5.createCanvas(canvasWidth, canvasHeight).parent(canvasParentRef);
+    p5.createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT).parent(canvasParentRef);
     p5.angleMode(p5.DEGREES);
   };
 
@@ -18,7 +16,7 @@ export default (props) => {
     p5.noStroke();
 
     //translate to center of canvas
-    p5.translate(canvasWidth / 2, canvasHeight / 2);
+    p5.translate(CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2);
     p5.rotate(angle);
     let c1 = p5.color("#53FF45");
     let c2 = p5.color("#F4FF52");

@@ -1,15 +1,14 @@
 import React from "react";
 import Sketch from "react-p5";
+import { CANVAS_WIDTH, CANVAS_HEIGHT } from '/src/data/const' 
 
-const canvasWidth = 500;
-const canvasHeight = 500;
 let blades = [];
 
 export default (props) => {
   const setup = (p5, canvasParentRef) => {
     // use parent to render the canvas in this ref
     // (without that p5 will render the canvas outside of your component)
-    p5.createCanvas(canvasWidth, canvasHeight).parent(canvasParentRef);
+    p5.createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT).parent(canvasParentRef);
     for (let i = 0; i < 1000; i++) {
       let x = p5.random(-500, 500);
       let y = 50;

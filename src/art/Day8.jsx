@@ -1,8 +1,9 @@
 import React from "react";
 import Sketch from "react-p5";
+import { CANVAS_WIDTH, CANVAS_HEIGHT } from '/src/data/const' 
 
-const canvasWidth = 500;
-const canvasHeight = 500;
+
+
 let randomSize;
 let randomRotate;
 let randomShape;
@@ -18,7 +19,7 @@ export default (props) => {
     // use parent to render the canvas in this ref
     // (without that p5 will render the canvas outside of your component)
 
-    p5.createCanvas(canvasWidth, canvasHeight, p5.WEBGL).parent(canvasParentRef);
+    p5.createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT, p5.WEBGL).parent(canvasParentRef);
     p5.angleMode(p5.DEGREES);
     randomSize = p5.random(2,4);
     randomShape = p5.random(20,150);

@@ -1,8 +1,7 @@
 import React from "react";
 import Sketch from "react-p5";
+import { CANVAS_WIDTH, CANVAS_HEIGHT } from '/src/data/const' 
 
-const canvasWidth = 500;
-const canvasHeight = 500;
 let points = [];
 let mult = 0.008; //control speed of angle change
 
@@ -10,7 +9,7 @@ export default (props) => {
   const setup = (p5, canvasParentRef) => {
     // use parent to render the canvas in this ref
     // (without that p5 will render the canvas outside of your component)
-    p5.createCanvas(canvasWidth, canvasHeight).parent(canvasParentRef);
+    p5.createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT).parent(canvasParentRef);
 
     // p5.mouseX = canvasWidth / 2;
     // p5.mouseY = canvasHeight / 2;
@@ -18,10 +17,10 @@ export default (props) => {
     p5.noiseDetail(1);
     p5.angleMode(p5.DEGREES);
     let density = 10; //how spaced out things are
-    let space = canvasWidth / density;
+    let space = CANVAS_WIDTH / density;
 
-    for (let x = 0; x < canvasWidth; x += space) {
-      for (let y = 0; y < canvasHeight; y += space) {
+    for (let x = 0; x < CANVAS_WIDTH; x += space) {
+      for (let y = 0; y < CANVAS_HEIGHT; y += space) {
         let p = p5.createVector(x + p5.random(-10, 10), y + p5.random(-10, 10));
         points.push(p);
       }
@@ -34,9 +33,9 @@ export default (props) => {
 
     for (let i = 0; i < points.length; i++) {
       //maps the coordinates of the points to the r,g,b values
-      let r = p5.map(points[i].x, 0, canvasWidth, 50, 255);
-      let g = p5.map(points[i].y, 0, canvasWidth, 50, 255);
-      let b = p5.map(points[i].x, 0, canvasWidth, 255, 50);
+      let r = p5.map(points[i].x, 0, CANVAS_WIDTH, 50, 255);
+      let g = p5.map(points[i].y, 0, CANVAS_WIDTH, 50, 255);
+      let b = p5.map(points[i].x, 0, CANVAS_WIDTH, 255, 50);
 
       p5.fill(r, g, b);
 
