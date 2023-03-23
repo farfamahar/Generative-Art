@@ -19,20 +19,21 @@ export default (props) => {
 
   function draw(p5) {
     p5.background(100);
-    p5.translate(CANVAS_WIDTH/2, CANVAS_HEIGHT/2);
-    branch(100,p5);
+    p5.translate(CANVAS_WIDTH/2, CANVAS_HEIGHT);
+    branch(60,p5);
   }
 
   function branch(len,p5){
     p5.push()
     if(len > 10){
     p5.strokeWeight(p5.map(len, 10, 100, 1, 15 ))
+    p5.stroke(70, 40, 20);
     p5.line(0, 0, 0, -len); // vertical line
     p5.translate(0, -len);
     p5.rotate(30);
-    branch(len * 0.7,p5);
-    p5.rotate(-60);
-    branch(len * 0.7,p5);
+    branch(len * p5.random(0.7, 0.9),p5);
+    p5.rotate(p5.random(50,-60));
+    branch(len * p5.random(0.7, 0.9),p5);
     }
     p5.pop()
 
