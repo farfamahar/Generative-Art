@@ -24,12 +24,17 @@ export default (props) => {
   }
 
   function branch(len,p5){
+    p5.push()
     if(len > 10){
+    p5.strokeWeight(p5.map(len, 10, 100, 1, 15 ))
     p5.line(0, 0, 0, -len); // vertical line
     p5.translate(0, -len);
     p5.rotate(30);
     branch(len * 0.7,p5);
+    p5.rotate(-60);
+    branch(len * 0.7,p5);
     }
+    p5.pop()
 
   }
 
