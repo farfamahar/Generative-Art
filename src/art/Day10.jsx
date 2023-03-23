@@ -12,9 +12,25 @@ export default (props) => {
       canvasParentRef
     );
 
+    p5.angleMode(p5.DEGREES);
+    p5.noLoop()
+
   };
 
   function draw(p5) {
+    p5.background(100);
+    p5.translate(CANVAS_WIDTH/2, CANVAS_HEIGHT/2);
+    branch(100,p5);
+  }
+
+  function branch(len,p5){
+    if(len > 10){
+    p5.line(0, 0, 0, -len); // vertical line
+    p5.translate(0, -len);
+    p5.rotate(30);
+    branch(len * 0.7,p5);
+    }
+
   }
 
   return <Sketch setup={setup} draw={draw} className="" />;
