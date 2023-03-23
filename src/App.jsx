@@ -29,7 +29,7 @@ function App() {
     setIndex(artArray.length - 1);
   }
 
-  const [artArray, setArtArray] = useState([<Day1/>, <Day2/>, <Day3/>, <Day4/>, <Day5/>, <Day6/>, <Day7/>, <Day8/>, <Day9/>, <Day10/>])
+  const [artArray, setArtArray] = useState([<Day10/>, <Day1/>, <Day2/>, <Day3/>, <Day4/>, <Day5/>, <Day6/>, <Day7/>, <Day8/>, <Day9/>])
 
   return (
     <div className="flex h-screen justify-center items-center flex-col" >
