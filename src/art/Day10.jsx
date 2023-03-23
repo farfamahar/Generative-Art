@@ -18,7 +18,7 @@ export default (props) => {
   };
 
   function draw(p5) {
-    p5.background(100);
+    p5.background(244);
     p5.translate(CANVAS_WIDTH/2, CANVAS_HEIGHT);
     branch(60,p5);
   }
@@ -30,10 +30,19 @@ export default (props) => {
     p5.stroke(70, 40, 20);
     p5.line(0, 0, 0, -len); // vertical line
     p5.translate(0, -len);
-    p5.rotate(30);
+    p5.rotate(p5.random(-20,-30));
     branch(len * p5.random(0.7, 0.9),p5);
-    p5.rotate(p5.random(50,-60));
+    p5.rotate(p5.random(50,60));
     branch(len * p5.random(0.7, 0.9),p5);
+    }
+    else{
+        let r = 220 + p5.random(-20, 20);
+        let g = 120 + p5.random(-20, 20);
+        let b = 170 + p5.random(-20, 20);
+        p5.fill(r, g, b, 150)
+        p5.noStroke();
+        p5.ellipse(0, 0, 5);
+
     }
     p5.pop()
 
