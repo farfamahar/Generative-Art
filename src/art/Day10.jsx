@@ -7,7 +7,7 @@ export default (props) => {
     // use parent to render the canvas in this ref
     // (without that p5 will render the canvas outside of your component)
 
-    p5.createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT).parent(canvasParentRef);
+    p5.createCanvas(CANVAS_WIDTH * 1.5, CANVAS_HEIGHT).parent(canvasParentRef);
 
     p5.angleMode(p5.DEGREES);
     p5.noLoop();
@@ -15,7 +15,7 @@ export default (props) => {
 
   function draw(p5) {
     p5.background(244);
-    p5.translate(CANVAS_WIDTH / 2, CANVAS_HEIGHT);
+    p5.translate(CANVAS_WIDTH * 1.5 / 2, CANVAS_HEIGHT);
     branch(60, p5);
   }
 
@@ -29,7 +29,9 @@ export default (props) => {
       p5.rotate(p5.random(-20, -30));
       branch(len * p5.random(0.7, 0.9), p5);
       p5.rotate(p5.random(50, 60));
+      branch(len * p5.random(0.2, 0.9), p5);
       branch(len * p5.random(0.7, 0.9), p5);
+
     } else {
       let r = 220 + p5.random(-20, 20);
       let g = 120 + p5.random(-20, 20);
