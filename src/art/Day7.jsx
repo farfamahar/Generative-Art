@@ -1,6 +1,8 @@
 import React from "react";
 import Sketch from "react-p5";
-import { CANVAS_WIDTH, CANVAS_HEIGHT } from '/src/data/const' 
+import { CANVAS_WIDTH, CANVAS_HEIGHT } from '/src/data/const'
+
+let offset;
 
 export default (props) => {
   const setup = (p5, canvasParentRef) => {
@@ -10,6 +12,7 @@ export default (props) => {
     p5.angleMode(p5.DEGREES);
     p5.rectMode(p5.CENTER);
     p5.createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT).parent(canvasParentRef);
+    offset = p5.random(1, 50);
 
   };
 
@@ -26,8 +29,8 @@ export default (props) => {
     
         
         //rotation
-        let offset = 10; //experiment with this number
-        p5.rotate(p5.sin(p5.frameCount + i * offset) * 100);
+        let offsetAmount = offset; //experiment with this number
+        p5.rotate(p5.sin(p5.frameCount + i * offsetAmount) * 100);
 
         let r = p5.map(p5.sin(p5.frameCount), -1, 1, 50, 255);
         let g = p5.map(p5.cos(p5.frameCount / 2), -1, 1, 50,255);

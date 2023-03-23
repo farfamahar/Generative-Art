@@ -11,6 +11,8 @@ export default (props) => {
 
     p5.angleMode(p5.DEGREES);
     p5.noLoop();
+    p5.pixelDensity(1);
+
   };
 
   function draw(p5) {
@@ -34,18 +36,15 @@ export default (props) => {
       branch(len * p5.random(0.7, 0.9), p5);
     } else {
       if (p5.random(1) < 0.9) {
-        //red
-        p5.fill(255, 194, 245);
+        p5.fill(255 + p5.random(-20, 20), 194 + p5.random(-20, 20), 245 + p5.random(-20, 20));
         leafShape(p5);
         if (p5.random(1) < 0.2) {
-          //light purple
-          p5.fill(255, 194, 245);
+          p5.fill(255 + p5.random(-20, 20), 194 + p5.random(-20, 20), 245 + p5.random(-20, 20));
           p5.noStroke();
           leafShape(p5);
         }
       } else {
-        //deep purple
-        p5.fill(117, 0, 98);
+        p5.fill(117 + p5.random(-20, 20), 0 + p5.random(-20, 20), 98 + p5.random(-20, 20));
         p5.strokeWeight(2);
         leafShape(p5);
 
