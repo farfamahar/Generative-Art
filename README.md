@@ -11,6 +11,19 @@ View them all here: https://generative-art-sandy.vercel.app/
 
 https://user-images.githubusercontent.com/32600047/218779973-94618dc0-63a4-4fbd-bf23-9aff860d8f0c.mov
 
+## Sketches
+- Cherry Blossoms
+- Waves
+- Flow Field
+- Spinner
+- Rubber Band Bounce
+- White River
+- Pulse
+- Aya
+- Skeletal
+- Round Ribbon
+- [stay tuned for more]
+
 
 
 ## Technologies
