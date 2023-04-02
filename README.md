@@ -22,6 +22,7 @@ https://user-images.githubusercontent.com/32600047/218779973-94618dc0-63a4-4fbd-
 - Aya
 - Skeletal
 - Round Ribbon
+- Koi
 - [stay tuned for more]
 
 
