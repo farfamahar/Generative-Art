@@ -10,6 +10,8 @@ import Day7 from "./art/Day7";
 import Day8 from "./art/Day8";
 import Day9 from "./art/Day9";
 import Day10 from "./art/Day10";
+import Day11 from "./art/Day11";
+
 
 function App() {
   const [index, setIndex] = useState(0);
@@ -34,7 +36,6 @@ function App() {
 
   function refreshArt() {
     setArtArray([
-      <Day10 />,
       <Day1 />,
       <Day2 />,
       <Day3 />,
@@ -44,6 +45,8 @@ function App() {
       <Day7 />,
       <Day8 />,
       <Day9 />,
+      <Day10 />,
+      <Day11 />,
     ]);
   }
 
@@ -58,6 +61,7 @@ function App() {
     <Day7 />,
     <Day8 />,
     <Day9 />,
+    <Day11 />,
   ]);
 
   return (
