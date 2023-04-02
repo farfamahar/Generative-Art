@@ -5,7 +5,7 @@ let koiImage;
 let koiFish = [];
 
 function preload(p5) {
-  koiImage = p5.loadImage('public/koi.png');
+  koiImage = p5.loadImage('/koi.png');
 }
 
 export default (props) => {
